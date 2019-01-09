@@ -1,26 +1,24 @@
 {
-  "name": "ems.loc",
+  "name": "landing1",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "server": "node server.js",
+    "gInstall": "npm i -g typescript less gulp"
+  },
+  "author": "vk.com/bezrukovyra",
+  "license": "MIT",
   "dependencies": {
-    "@types/jquery": "^7.7.7",
-    "gulp": "^4.0.0",
-    "jquery": "^3.3.1",
-    "reset-css": "^4.0.1",
+    "pug": "latest",
+    "gulp-pug": "latest",
+    "static-server": "^2.2.1",
+    "gulp": "latest",
+    "del": "3.0.0",
     "typescript": "latest",
-    "less": "latest",
     "gulp-typescript": "latest",
     "gulp-less": "latest",
     "less-plugin-autoprefix": "latest",
-    "gulp-concat": "latest",
-    "gulp-copy": "latest",
-    "del": "latest"
-  },
-  "scripts": {
-    "glob": "npm i typescript less gulp -g"
+    "gulp-concat": "latest"
   }
 }
