@@ -1,0 +1,26 @@
+{
+  "name": "ems.loc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^7.7.7",
+    "gulp": "^4.0.0",
+    "jquery": "^3.3.1",
+    "reset-css": "^4.0.1",
+    "typescript": "latest",
+    "less": "latest",
+    "gulp-typescript": "latest",
+    "gulp-less": "latest",
+    "less-plugin-autoprefix": "latest",
+    "gulp-concat": "latest",
+    "gulp-copy": "latest",
+    "del": "latest"
+  },
+  "scripts": {
+    "glob": "npm i typescript less gulp -g"
+  }
+}
