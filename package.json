@@ -10,6 +10,7 @@
   "author": "vk.com/bezrukovyra",
   "license": "MIT",
   "dependencies": {
+    "reset-css": "latest",
     "pug": "latest",
     "gulp-pug": "latest",
     "static-server": "^2.2.1",

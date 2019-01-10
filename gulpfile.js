@@ -30,7 +30,7 @@ gulp.task('typescript', function () {
 gulp.task('less', function () {
     return gulp.src(["./Style/style.less"])
       .pipe(less({
-        plugins: [autoprefix]
+        //plugins: [autoprefix]
       }))
       .pipe(gulp.dest('./'));
   });

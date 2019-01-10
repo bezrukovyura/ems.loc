@@ -1,4 +1,22 @@
-- var menuItems = ["что такое ЕМS", "Этапы тренировки", "вопрос-ответ", "Отзывы", "Адреса залов"];
+mixin socio(href, img)
+    a(href=href)
+        img(src=img)
+
+mixin _menuItem(href, text)
+    a(href=href)= text
+
+.top-menu
+    .logo
+        img(src="img/logo-top.svg")
     .menu
-    for item in menuItems
-        div= item
+        +_menuItem("#a", "что такое ЕМS")
+        +_menuItem("#a", "Этапы тренировки")
+        +_menuItem("#a", "Отзывы")
+        +_menuItem("#a", "Адреса залов")
+    .contacts
+        .phone 8 964 786-67-67
+        .or ИЛИ
+        .link
+            +socio("#tele", "img/topmenu-telegram.svg")
+            +socio("#viber", "img/topmenu-viber.svg")
+            +socio("#watsapp", "img/topmenu-watsapp.svg")

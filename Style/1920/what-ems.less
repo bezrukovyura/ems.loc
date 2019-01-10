@@ -1,0 +1,97 @@
+.what-ems {
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 100px 0;
+    .title {
+        font-style: italic;
+        font-weight: bold;
+        font-size: 50px;
+        text-align: center;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        width: 100%;
+        margin: 90px auto 53px auto;
+    }
+    .card {
+        max-width: 696px;
+        width: 100%;
+        background: #fff;
+        margin: 0 auto;
+        padding: 42px 48px 44px 71px;
+        box-shadow: 0px 5px 23px rgba(0, 0, 0, 0.1);
+        font-style: italic;
+        line-height: 27px;
+        font-size: 18px;
+        color: #3C3C3B;
+        position: relative;
+        &:before {
+            content: "EMS";
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 71px;
+            height: 71px;
+            border-radius: 100px;
+            left: -35px;
+            top: calc(50% - 35px);
+            background: #76B82A;
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+        }
+    }
+    .info {
+        margin: 63px 0 0 0;
+        width: 100%;
+        position: relative;
+        display: flex;
+        .left {
+            width: calc(100% - 720px);
+            font-family: Roboto;
+            font-style: normal;
+            line-height: 25px;
+            font-size: 18px;
+            color: #3C3C3B;
+            .item {
+                max-width: 390px;
+                margin: 0 0 24px 0;
+                position: relative;
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    background-image: url(img/what-ems-ok.svg);
+                    width: 24px;
+                    height: 24px;
+                    left: -50px;
+                    top: 0;
+                }
+            }
+            .description {
+                margin: 0 0 0 215px;
+            }
+        }
+        .right {
+            max-width: 720px;
+            width: 100%;
+            img{
+              position: absolute;
+            }
+            .text {
+              font-family: Roboto;
+              font-style: italic;
+              font-weight: normal;
+              line-height: 26px;
+              font-size: 18px;
+              color: #3C3C3B;
+              padding: 46px 178px 53px 213px;
+              background-color: #F5F5F5;
+              background-image: url(img/promo-circle-line.svg);
+              background-repeat: no-repeat;
+              background-position: 111% -49%;
+              margin: 19px 0 0 12px;
+            }
+        }
+    }
+}

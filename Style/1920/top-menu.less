@@ -1,0 +1,54 @@
+.top-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 21px 0;
+  .menu{
+    font-family: Roboto;
+     a {
+      text-decoration: none;
+      padding: 0 15px;
+      text-transform: uppercase;
+      line-height: 17px;
+      font-family: Roboto;
+      font-size: 12px;
+    }
+  }
+  .contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    width: 340px;
+    .phone {
+      background: #E5E5E5;
+      padding: 5px 13px 5px 25px;
+      -webkit-border-radius: 13px;
+      border-radius: 13px;
+      position: relative;
+      font-weight: 600;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      &:before {
+        content: "";
+        display: block;
+        width: 19px;
+        height: 20px;
+        position: absolute;
+        background-image: url(img/topmenu-phone.svg);
+        left: 6px;
+        background-repeat: no-repeat;
+      }
+    }
+    .link a {
+      margin: 0 0 0 6px;
+    }
+    .or {
+      color: #ABA4A4;
+      font-weight: 300;
+      line-height: 27px;
+      font-size: 18px;
+    }
+  }
+}
