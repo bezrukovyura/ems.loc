@@ -1,6 +1,20 @@
 .this-fitness {
     background: #F5F5F5;
     overflow: hidden;
+    padding: 0px 0 140px 0;
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border: 30px solid #fff;
+      box-sizing: border-box;
+      border-radius: 300px;
+      top: -70px;
+      left: -70px;
+    }
     .title {
         width: 100%;
         font-style: italic;
