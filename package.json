@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "node server.js",
-    "gInstall": "npm i -g typescript less gulp"
+    "preinstall": "npm i -g typescript less gulp"
   },
   "author": "vk.com/bezrukovyra",
   "license": "MIT",
