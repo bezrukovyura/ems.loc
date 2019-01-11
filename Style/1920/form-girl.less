@@ -1,7 +1,8 @@
 .form-girl {
   background: #252C39;
+  position: relative;
   .inform {
-    padding: 75px 0 0 0;
+    padding: 75px 0 59px 0;
     margin: 0 0 0 160px;
   }
   .title {
@@ -22,7 +23,6 @@
   }
   .send-phone {
     margin: 28px 0 0 0;
-    
     .form {
       max-width: 565px;
       display: flex;
@@ -34,7 +34,7 @@
         line-height: 29px;
         font-size: 18px;
         color: #8F8F8F;
-        padding: 12px 20px; 
+        padding: 12px 20px;
         width: 285px;
       }
       .btn {
@@ -51,15 +51,19 @@
         align-items: center;
         padding: 0 0 0 30px;
         box-sizing: border-box;
+        cursor: pointer;
+        background-image: url(img/promo-arrow.svg);
+        background-repeat: no-repeat;
+        background-position: 86% 50%;
       }
     }
-    .social{
+    .social {
       margin: 40px 0 0 0;
       margin: 40px 0 0 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 340px;
+      max-width: 380px;
       .text {
         font-family: Roboto;
         font-style: normal;
@@ -68,11 +72,19 @@
         font-size: 18px;
         color: #FFFFFF;
       }
-      .group{
+      .groups {
+        width: 295px;
         display: flex;
         justify-content: space-between;
-        max-width: 340px;
       }
     }
+  }
+  .girl {
+    width: 539px;
+    height: 609px;
+    position: absolute;
+    background-image: url(img/form-girl-girl.png);
+    right: 16px;
+    top: -160px;
   }
 }

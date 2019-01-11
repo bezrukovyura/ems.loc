@@ -1,0 +1,108 @@
+.plun-work {
+  position: relative;
+  overflow: hidden;
+  >.title {
+    font-style: italic;
+    font-weight: bold;
+    line-height: 53px;
+    font-size: 50px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    margin: 100px 0 0 0;
+  }
+  >.description {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 25px;
+    font-size: 18px;
+    text-align: center;
+    color: #3C3C3B;
+    max-width: 885px;
+    margin: 23px auto 0 auto;
+  }
+  >.meta-title {
+    font-style: italic;
+    font-weight: bold;
+    line-height: 25px;
+    font-size: 24px;
+    text-align: center;
+    margin: 51px 0 0 0;
+  }
+  .cards {
+    max-width: 885px;
+    margin: 29px auto 0 auto;
+    .item {
+      position: relative;
+      display: flex;
+      padding: 0 0 20px 0;
+      &:nth-child(1) {
+        border-left: 1px dashed #76B82A;
+      }
+      &:nth-child(2) {
+        border-left: 1px dashed #76B82A;
+      }
+      >* {
+        float: left;
+      }
+      .number {
+        background: #76B82A;
+        transform: rotate(45deg);
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
+        position: absolute;
+        left: -25px;
+        top: -25px;
+        .rot {
+          transform: rotate(-45deg);
+          font-style: italic;
+          font-weight: bold;
+          line-height: 25px;
+          font-size: 24px;
+          color: #fff;
+          position: absolute;
+          top: 14px;
+          left: 20px;
+        }
+      }
+      .text {
+        padding: 0 0 50px 50px;
+        max-width: calc(100% - 250px);
+        width: 100%;
+        .title {
+          font-style: italic;
+          font-weight: bold;
+          line-height: 25px;
+          font-size: 24px;
+        }
+        .description {
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          line-height: 25px;
+          font-size: 18px;
+          color: #3C3C3B;
+          margin: 13px 0 0 0;
+          max-width: 400px;
+        }
+      }
+    }
+  }
+  a {
+    font-style: italic;
+    font-weight: bold;
+    line-height: 21px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    display: block;
+    background: #000;
+    text-decoration: none;
+    padding: 18px 8px 15px 48px;
+    width: 385px;
+    margin: 35px 0 0 0;
+    box-sizing: border-box;
+  }
+}

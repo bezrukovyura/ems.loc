@@ -1,0 +1,101 @@
+.we-teams {
+  padding: 110px 0 80px 0;
+  overflow: hidden;
+  .wrap {
+    display: flex;
+    .left {
+      width: 300px;
+      margin: 0 0 0 228px;
+      .title {
+        font-style: italic;
+        font-weight: bold;
+        line-height: 53px;
+        font-size: 50px;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+      }
+      .description {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 25px;
+        font-size: 18px;
+        color: #3C3C3B;
+        margin: 20px 0 0 0;
+      }
+      a {
+        font-style: italic;
+        font-weight: bold;
+        line-height: 21px;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background: black;
+        margin: 20px 0 0 0;
+      }
+    }
+    .right {
+      width: calc(100% - 300px);
+      padding: 0 0 0 50px;
+      box-sizing: border-box;
+      .inner {
+        width: 1752px;
+        overflow: hidden;
+        padding: 6px 0 30px 19px;
+      }
+      .card {
+        background: #fff;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        padding: 35px 35px 75px 35px;
+        float: left;
+        margin: 0 32px 0 0;
+        position: relative;
+        overflow: hidden;
+
+        .img {
+          background: #D8D8D8;
+          transform: rotate(45deg);
+          max-width: 150px;
+          max-height: 150px;
+          overflow: hidden;
+          border-radius: 40px;
+          margin: 0 auto;
+          img {
+            transform: rotate(-45deg);
+            max-width: 100%;
+            height: initial;
+          }
+        }
+        .title {
+          margin: 40px 0 0 0;
+          font-style: italic;
+          font-weight: bold;
+          line-height: 25px;
+          font-size: 24px;
+          text-align: center;
+        }
+        .description {
+          margin: 20px 0 25px 0;
+          font-family: Roboto;
+          font-style: italic;
+          font-weight: normal;
+          line-height: 25px;
+          font-size: 18px;
+          text-align: center;
+          color: #AFAFAF;
+        }
+        &:after {
+          display: block;
+          content: "";
+          background: #56A8DD;
+          border-radius: 5px;
+          height: 8px;
+          width: 80px;
+          position: absolute;
+          bottom: 50px;
+          left: calc(50% - 40px);
+        }
+      }
+    }
+  }
+}
