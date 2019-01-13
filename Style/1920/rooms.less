@@ -1,0 +1,128 @@
+.rooms {
+  padding: 90px 0 0 0;
+  position: relative;
+  .title {
+    font-style: italic;
+    font-weight: bold;
+    line-height: 53px;
+    font-size: 50px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  }
+  .room-name {
+    margin: 40px auto 0 auto;
+    max-width: 360px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .name {
+      font-style: italic;
+      font-weight: bold;
+      line-height: 25px;
+      font-size: 24px;
+      text-align: center;
+      padding: 0 0 11px 0;
+      &.active {
+        border-bottom: 5px solid #76B82A;
+      }
+    }
+  }
+  .outer {
+    overflow: hidden;
+    .photos {
+      margin: 50px 0 0 0;
+      max-width: 100%;
+      overflow: hidden;
+      position: relative;
+      height: 540px;
+      transition: all 1s;
+      .inner {
+        transition: all 1s;
+        position: absolute;
+        width: 3700px;
+        height: 540px;
+        left: -565px;
+        >img {
+          max-height: 100%;
+          margin: 0 10px;
+          &.opacity {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+  .arrows {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 26px auto 0 auto;
+    width: 100%;
+    .text {
+      font-family: Montserrat;
+      font-style: italic;
+      font-weight: normal;
+      line-height: 25px;
+      font-size: 16px;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+    img {
+      cursor: pointer;
+    }
+  }
+  .gant {
+    background-image: url(img/rooms-gant.png);
+    position: absolute;
+    width: 450px;
+    height: 350px;
+    right: 0;
+    top: -160px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .rooms {
+    .gant {
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 240px;
+      height: 192px;
+      bottom: -172px;
+      z-index: 3;
+      top: initial;
+    }
+    >.title {
+      font-size: 24px;
+    }
+    .room-name {
+      max-width: 266px;
+      .name {
+        font-size: 18px;
+      }
+    }
+    .arrows {
+      display: none;
+    }
+    .outer {
+      height: initial !important;
+      .photos {
+        height: initial;
+        .inner {
+          position: relative;
+          left: 0;
+          height: initial;
+          width: 100% !important;
+          >img {
+            width: 48%;
+            display: block;
+            float: left;
+            box-sizing: border-box;
+            margin: 1% 1% 1% 1%;
+          }
+        }
+      }
+    }
+  }
+}

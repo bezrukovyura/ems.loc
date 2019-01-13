@@ -6,15 +6,16 @@ mixin _menuItem(href, text)
     a(href=href)= text
 
 .top-menu
+    img(src="img/burger.svg", id="burger")
     .logo
         img(src="img/logo-top.svg")
     .menu
-        +_menuItem("#a", "что такое ЕМS")
-        +_menuItem("#a", "Этапы тренировки")
-        +_menuItem("#a", "Отзывы")
-        +_menuItem("#a", "Адреса залов")
+        +_menuItem("#what-ems", "что такое ЕМS")
+        +_menuItem("#plun-work ", "Этапы тренировки")
+        +_menuItem("#what-talk", "Отзывы")
+        +_menuItem("#addresses", "Адреса залов")
     .contacts
-        .phone 8 964 786-67-67
+        a(href="#tel:1223",class="phone") 8 964 786-67-67
         .or ИЛИ
         .link
             +socio("#tele", "img/topmenu-telegram.svg")

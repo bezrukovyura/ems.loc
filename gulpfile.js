@@ -30,7 +30,7 @@ gulp.task('typescript', function () {
 gulp.task('less', function () {
     return gulp.src(["./Style/style.less"])
       .pipe(less({
-        //plugins: [autoprefix]
+        plugins: [autoprefix]
       }))
       .pipe(gulp.dest('./'));
   });
@@ -71,4 +71,5 @@ gulp.task('deploy',  gulp.series('clean', 'typescript', 'less', 'vendors', 'copy
 gulp.task('watcher',function(){
   gulp.watch('./**/*.pug',  gulp.series('pug'));
   gulp.watch('./**/*.less', gulp.series('less'));
+  gulp.watch('./**/*.ts', gulp.series('typescript'));
 });

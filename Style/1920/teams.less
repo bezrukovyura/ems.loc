@@ -38,7 +38,12 @@
       width: calc(100% - 300px);
       padding: 0 0 0 50px;
       box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
       .inner {
+        left: 0px;
+        transition: all 1s;
+        position: absolute;
         width: 1752px;
         overflow: hidden;
         padding: 6px 0 30px 19px;
@@ -51,7 +56,6 @@
         margin: 0 32px 0 0;
         position: relative;
         overflow: hidden;
-
         .img {
           background: #D8D8D8;
           transform: rotate(45deg);
@@ -62,8 +66,9 @@
           margin: 0 auto;
           img {
             transform: rotate(-45deg);
-            max-width: 100%;
             height: initial;
+            max-width: 123%;
+            margin: -16px 0 0 -18px;
           }
         }
         .title {
@@ -94,6 +99,71 @@
           position: absolute;
           bottom: 50px;
           left: calc(50% - 40px);
+        }
+      }
+    }
+  }
+  .bottom {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    .arrows {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      float: right;
+      padding: 0 25px 0 0;
+      width: 275px;
+      .text {
+        font-family: Montserrat;
+        font-style: italic;
+        font-weight: normal;
+        line-height: 25px;
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: 0.04em;
+      }
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .we-teams {
+    padding: 60px 0 80px 0;
+    .bottom .arrows {
+      float: none;
+      margin: 0 auto;
+    }
+    .wrap {
+      flex-direction: column;
+      >* {
+        margin: 0 auto;
+        padding: 0;
+        width: 90%;
+        max-width: 90%;
+      }
+      .right {
+        width: 100%;
+        max-width: 100%;
+        margin: 35px auto 0 auto;
+      }
+      .left {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        .description {
+          font-size: 16px;
+          max-width: 80%;
+          margin: 0 auto;
+        }
+        .title {
+          font-size: 24px;
+        }
+        a {
+          display: none;
         }
       }
     }

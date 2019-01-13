@@ -1,0 +1,109 @@
+.addresses {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin: 65px 0 0 0;
+  display: flex;
+  background-color: #F5F5F5;
+  background-image: url(img/promo-circle-line.svg);
+  background-repeat: no-repeat;
+  background-position: -10% -20%;
+  >div {
+    width: 50%;
+  }
+  .left {
+    .info {
+      margin: 93px auto 0 auto;
+      width: 390px;
+      >.title {
+        font-style: italic;
+        font-weight: bold;
+        line-height: 53px;
+        font-size: 50px;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+      }
+      .cards {
+        margin: 50px 0 179px 0;
+        .card {
+          position: relative;
+          width: 100%;
+          background: #fff;
+          box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+          margin: 0 0 20px 0;
+          .right {
+            padding: 30px 50px 30px 100px;
+          }
+          .number-wrap {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            .number {
+              background: #76B82A;
+              transform: rotate(45deg);
+              width: 50px;
+              height: 50px;
+              border-radius: 15px;
+              .rot {
+                transform: rotate(-45deg);
+                font-style: italic;
+                font-weight: bold;
+                line-height: 25px;
+                font-size: 24px;
+                color: #fff;
+                position: absolute;
+                top: 14px;
+                left: 20px;
+              }
+            }
+          }
+          .name {
+            font-style: italic;
+            font-weight: bold;
+            line-height: 25px;
+            font-size: 24px;
+          }
+          .description {
+            margin: 14px 0 0 0;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 20px;
+            font-size: 14px;
+            color: #3C3C3B;
+          }
+        }
+      }
+    }
+  }
+  >.right {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .addresses {
+    flex-direction: column;
+    background-image: none;
+    padding: 0px 0 155px 0;
+    #mymap {
+      height: 500px;
+      width: 90%;
+      margin: 0 auto;
+      box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+    }
+    >div {
+      width: 100%;
+    }
+    .left .info {
+      width: 90%;
+      .cards {
+        margin: 50px 0 25px 0;
+      }
+      >.title {
+        font-size: 24px;
+        text-align: center;
+      }
+    }
+  }
+}

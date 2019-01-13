@@ -5,7 +5,7 @@
   background-position: 100% 100%;
   padding: 0 0 64px 0;
   position: relative;
-  > .title {
+  >.title {
     font-style: italic;
     font-weight: bold;
     line-height: 53px;
@@ -22,6 +22,24 @@
       position: relative;
       padding: 21px 0;
       border-bottom: 1px solid #E2E2E2;
+      cursor: pointer;
+      .minus {
+        display: block;
+      }
+      .plus {
+        display: none;
+      }
+      &.hide {
+        .text {
+          height: 0px !important;
+        }
+        .plus {
+          display: block;
+        }
+        .minus {
+          display: none;
+        }
+      }
       .title {
         font-family: Roboto;
         font-style: normal;
@@ -31,6 +49,7 @@
         color: #3C3C3B;
       }
       .text {
+        height: 100%;
         margin: 13px 0 0 0;
         font-family: Roboto;
         font-style: normal;
@@ -38,6 +57,7 @@
         line-height: 25px;
         font-size: 18px;
         color: #3C3C3B;
+        overflow: hidden;
       }
       img {
         position: absolute;
@@ -55,8 +75,6 @@
       border-radius: 50px;
       background: #56A8DD;
     }
-
-
   }
   .boots {
     background-image: url(img/answer-bots.png);
@@ -84,5 +102,21 @@
       text-decoration: none;
     }
   }
+}
 
+@media screen and (max-width: 800px) {
+  .answer-block {
+    >.title {
+      font-size: 24px;
+      padding: 27px 0 0 0;
+    }
+    background-image: none;
+    .answers {
+      max-width: 90%;
+      margin: 14px auto 0 auto;
+    }
+    .boots {
+      display: none;
+    }
+  }
 }

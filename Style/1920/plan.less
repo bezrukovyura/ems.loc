@@ -106,3 +106,38 @@
     box-sizing: border-box;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .plun-work {
+    >.title {
+      margin: 8px 0 0 0;
+      font-size: 32px;
+    }
+    a {
+      width: 90%;
+      text-align: center;
+      padding: 14px 0;
+    }
+    .cards {
+      max-width: 82%;
+      margin: 70px auto 0 auto;
+      .item {
+        flex-direction: column;
+        padding: 0 0 60px 0;
+        &:nth-child(3) img {
+          display: none;
+        }
+        .number {
+          top: -13px;
+        }
+        .text {
+          max-width: 90%;
+        }
+        img {
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
