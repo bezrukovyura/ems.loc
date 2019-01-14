@@ -52,11 +52,11 @@ class Corusel {
     this.setParams();
     this.textNumber = $($(textNumber)[0]);
     this.textNumber.html(this.currenCount + 1 + "/" + this.countCard);
-    debugger
-    let leftPhase =  $(this.conteiner.children()[0]).css("left");
-    if(leftPhase.indexOf("px") != -1){
-      this.position =  +leftPhase.replace("px", "");
-      if(this.position < 0)
+    //debugger
+    let leftPhase = $(this.conteiner.children()[0]).css("left");
+    if (leftPhase.indexOf("px") != -1) {
+      this.position = +leftPhase.replace("px", "");
+      if (this.position < 0)
         this.currenCount = 1;
     }
 
@@ -93,7 +93,7 @@ class Corusel {
   }
 
   setParams() {
-    
+
     let el = this.conteiner.children().children();
     this.countCard = el.length;
     this.widthBlock = $(el[0]).outerWidth();
@@ -105,6 +105,72 @@ class Corusel {
     let x = $(this.conteiner[0]).outerHeight();
     this.conteiner.parent().css("height", x);
   }
+}
+
+class SpoilerDots {
+  obj: JQuery[];
+
+  constructor(private className: string, private max: number) {
+    this.obj = <any>$($(className));
+    this.init();
+    this.addBind();
+  }
+
+  init() {
+    for (let i = 0; i < this.obj.length; i++) {
+      if ($(this.obj[i]).html().length > this.max)
+        this.setSpoiler($(this.obj[i]));
+    }
+  }
+
+  setSpoiler(x: JQuery) {
+    let str = x.html();
+    x.data({ "text": x.html() });
+    str = str.slice(0, this.max - str.length) + "... <font> Читать полностью</font>";
+    x.html(str);
+  }
+
+  addBind() {
+    $(this.className + " font").on("click", e => {
+      debugger
+      let parent = $($(e.currentTarget).parent());
+      parent.html(parent.data("text"));
+    });
+  }
+
+}
+
+class Tabs {
+  selectors: JQuery[] = [];
+
+  constructor(private selectorId: string, private photoWrapId: string, private photos: { name: string, url: string[] }[], private callBack: () => void) {
+    let wrap = $($(this.selectorId)[0]);
+    for (let i = 0; i < wrap.length; i++) {
+      this.selectors.push($(wrap[i]));
+    }
+  }
+
+  bind() {
+    $(this.selectorId + "> *").on("click", e => {
+      debugger
+      $(this.selectorId + "> *").removeClass("active");
+      $(e.target).addClass("active");
+      let photo: { name: string, url: string[] };
+      this.photos.forEach(x => {
+        if (x.name == $(e.target).data("name"))
+          photo = x;
+      });
+      let str = "";
+      photo.url.forEach(x => {
+        str += '<img src="' + x + '" />';
+      });
+
+      $(this.photoWrapId).html(str);
+
+      this.callBack();
+    });
+  }
+
 }
 
 class App {
@@ -132,6 +198,30 @@ class App {
       true
     );
 
+    let spoilerDots = new SpoilerDots(".what-talk .cards .card .bottom .text", 360);
+
+    let photosRooms: { name: string, url: string[] }[] = [
+      {
+        name: "kudrovo",
+        url: ["img/rooms-room0-photo0.jpg", "img/rooms-room0-photo1.jpg", "img/rooms-room0-photo2.jpg"]
+      },
+      {
+        name: "shuval",
+        url: ["img/rooms-room0-photo0.jpg", "img/rooms-room0-photo1.jpg", "img/rooms-room0-photo2.jpg"]
+      }
+    ];
+
+    let onSelectTab = () => {
+      debugger
+      roms.setHeight();
+      roms.setParams();
+    }
+
+    let tabs = new Tabs(".rooms .room-name", ".rooms .outer .photos .inner", photosRooms, onSelectTab)
+  }
+
+  down = () => {
+    $('html, body').animate({ scrollTop: $("#form-man").offset().top }, 500);
   }
 }
 

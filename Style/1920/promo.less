@@ -83,36 +83,13 @@
           background-color: #fff;
           border: 1px solid #d8d8d8;
         }
-        .btn {
-          font-style: italic;
-          font-weight: bold;
-          line-height: 21px;
-          font-size: 20px;
-          text-transform: uppercase;
-          background-color: black;
-          color: #fff;
-          padding: 0 0 0 35px;
-          width: calc(100% - 285px);
-          display: flex;
-          position: relative;
-          align-items: center;
-          cursor: pointer;
-          background-image: url(img/promo-arrow.svg);
-          background-repeat: no-repeat;
-          background-position: 86% 50%;
-          box-sizing: border-box;
-          &:after {
-            content: "";
-            display: block;
-            width: 100%;
-            position: absolute;
-            height: 50px;
-            left: 13px;
-            top: 13px;
-            z-index: -1;
-            border: 1px solid #E0E0E0;
+        button {
+          width: 245px;
+          padding: 0px 60px 0 0;
+          &:hover{
+            padding: 0 0px 0 65px;
           }
-        }
+      }
       }
       .description {
         margin: 60px 0 0 165px;
@@ -230,18 +207,12 @@
       width: 90%;
       display: block;
     }
-    .btn {
-      font-style: italic;
-      font-weight: bold;
-      line-height: 21px;
-      font-size: 20px;
-      text-transform: uppercase;
-      color: #FFFFFF;
-      background-color: black;
-      width: 90%;
-      margin: 11px auto 0 auto;
-      padding: 20px 0 17px 71px;
-      box-sizing: border-box;
+    button {
+      max-width: 90%;
+      margin: 7px auto 0 auto;
+      display: block;
+      line-height: 54px;
+      font-size: 16px;
     }
     .items {
       margin: 33px auto 0 auto;

@@ -45,7 +45,9 @@
       position: relative;
       margin: 0px 0 35px 0;
       z-index: 2;
+      transform-style: preserve-3d;
       &:after {
+        transform: translateZ(-1px);
         content: "";
         display: block;
         position: absolute;

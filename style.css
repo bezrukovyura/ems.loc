@@ -153,6 +153,57 @@ input {
     overflow: hidden;
   }
 }
+.anim-arrow {
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  background-image: url(https://raw.githubusercontent.com/bezrukovyura/ems.loc/master/img/arrow-btn.png);
+  background-repeat: no-repeat;
+  padding: 0 80px 0 0;
+  background-position: calc(100% - 10%) 50%;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  color: white;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 21px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.anim-arrow:hover {
+  background-position: calc(10%) 50%;
+  padding: 0 0px 0 90px;
+  background-color: #a21010 !important;
+}
+.anim-arrow.anim-black {
+  background-color: #000;
+}
+.anim-arrow.anim-green {
+  background-color: #76B82A;
+}
+.anim-arrow.anim-border:before {
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  content: "";
+  display: block;
+  position: absolute;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  top: 15px;
+  left: 15px;
+  -webkit-transform: translateZ(-1px);
+          transform: translateZ(-1px);
+  border: 1px solid #ccc;
+}
+.anim-arrow.anim-border:hover:before {
+  top: 0px;
+  left: 0px;
+  background-color: #a21010;
+}
 .top-menu {
   display: -webkit-box;
   display: -webkit-flex;
@@ -354,42 +405,12 @@ input {
   background-color: #fff;
   border: 1px solid #d8d8d8;
 }
-.promo-first > .left .bottom .form .btn {
-  font-style: italic;
-  font-weight: bold;
-  line-height: 21px;
-  font-size: 20px;
-  text-transform: uppercase;
-  background-color: black;
-  color: #fff;
-  padding: 0 0 0 35px;
-  width: calc(100% - 285px);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
-  background-image: url(img/promo-arrow.svg);
-  background-repeat: no-repeat;
-  background-position: 86% 50%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.promo-first > .left .bottom .form button {
+  width: 245px;
+  padding: 0px 60px 0 0;
 }
-.promo-first > .left .bottom .form .btn:after {
-  content: "";
-  display: block;
-  width: 100%;
-  position: absolute;
-  height: 50px;
-  left: 13px;
-  top: 13px;
-  z-index: -1;
-  border: 1px solid #E0E0E0;
+.promo-first > .left .bottom .form button:hover {
+  padding: 0 0px 0 65px;
 }
 .promo-first > .left .bottom .description {
   margin: 60px 0 0 165px;
@@ -521,19 +542,12 @@ input {
     width: 90%;
     display: block;
   }
-  .promo-first-mobile .btn {
-    font-style: italic;
-    font-weight: bold;
-    line-height: 21px;
-    font-size: 20px;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    background-color: black;
-    width: 90%;
-    margin: 11px auto 0 auto;
-    padding: 20px 0 17px 71px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+  .promo-first-mobile button {
+    max-width: 90%;
+    margin: 7px auto 0 auto;
+    display: block;
+    line-height: 54px;
+    font-size: 16px;
   }
   .promo-first-mobile .items {
     margin: 33px auto 0 auto;
@@ -783,8 +797,12 @@ input {
   position: relative;
   margin: 0px 0 35px 0;
   z-index: 2;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 .this-fitness .cards .item:after {
+  -webkit-transform: translateZ(-1px);
+          transform: translateZ(-1px);
   content: "";
   display: block;
   position: absolute;
@@ -882,34 +900,8 @@ input {
   padding: 12px 20px;
   width: 285px;
 }
-.form-girl .send-phone .form .btn {
-  font-style: italic;
-  font-weight: bold;
-  line-height: 21px;
-  font-size: 20px;
-  text-transform: uppercase;
-  color: #fff;
-  background: #76B82A;
-  width: calc(100% - 285px);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: normal;
-  -webkit-justify-content: normal;
-      -ms-flex-pack: normal;
-          justify-content: normal;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 0 0 30px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  cursor: pointer;
-  background-image: url(img/promo-arrow.svg);
-  background-repeat: no-repeat;
-  background-position: 86% 50%;
+.form-girl .send-phone .form button {
+  width: 250px;
 }
 .form-girl .send-phone .social {
   margin: 40px 0 0 0;
@@ -975,10 +967,11 @@ input {
     z-index: 4;
     position: relative;
   }
-  .form-girl .send-phone .form .btn {
+  .form-girl .send-phone .form button {
     width: 90%;
-    padding: 19px 0 18px 35px;
-    margin: 11px 0 0 0;
+    margin: 9px auto 0 auto;
+    line-height: 55px;
+    font-size: 18px;
   }
   .form-girl .send-phone .form input {
     width: 79%;
@@ -1090,31 +1083,19 @@ input {
   margin: 13px 0 0 0;
   max-width: 400px;
 }
-.plun-work a {
-  font-style: italic;
-  font-weight: bold;
-  line-height: 21px;
-  font-size: 20px;
-  text-transform: uppercase;
-  color: #fff;
-  display: block;
-  background: #000;
-  text-decoration: none;
-  padding: 18px 8px 15px 48px;
-  width: 385px;
-  margin: 35px 0 0 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.plun-work button {
+  line-height: 53px;
+  width: 400px;
+  margin: 13px 0 0 0;
 }
 @media screen and (max-width: 800px) {
   .plun-work > .title {
     margin: 8px 0 0 0;
     font-size: 32px;
   }
-  .plun-work a {
+  .plun-work button {
     width: 90%;
-    text-align: center;
-    padding: 14px 0;
+    font-size: 14px;
   }
   .plun-work .cards {
     max-width: 82%;
@@ -1293,15 +1274,9 @@ input {
   color: #3C3C3B;
   margin: 20px 0 0 0;
 }
-.we-teams .wrap .left a {
-  font-style: italic;
-  font-weight: bold;
-  line-height: 21px;
-  font-size: 20px;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  background: black;
-  margin: 20px 0 0 0;
+.we-teams .wrap .left button {
+  margin: 40px 0 0 0;
+  line-height: 40px;
 }
 .we-teams .wrap .right {
   width: calc(100% - 300px);
@@ -1513,10 +1488,6 @@ input {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -1555,6 +1526,9 @@ input {
   font-size: 16px;
   color: #AFAFAF;
 }
+.what-talk .cards .card .top .right {
+  margin: 0 0 0 20px;
+}
 .what-talk .cards .card .bottom {
   margin: 16px 0 0 0;
 }
@@ -1564,6 +1538,14 @@ input {
   font-weight: normal;
   line-height: 24px;
   font-size: 16px;
+}
+.what-talk .cards .card .bottom .text font {
+  cursor: pointer;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 23px;
+  font-size: 16px;
+  color: #56A8DD;
 }
 .what-talk .info .text {
   font-style: italic;
@@ -1908,34 +1890,9 @@ input {
   padding: 12px 20px;
   width: 285px;
 }
-.form-man .send-phone .form .btn {
-  font-style: italic;
-  font-weight: bold;
-  line-height: 21px;
-  font-size: 20px;
-  text-transform: uppercase;
-  color: #fff;
-  background: #76B82A;
-  width: calc(100% - 285px);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: normal;
-  -webkit-justify-content: normal;
-      -ms-flex-pack: normal;
-          justify-content: normal;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 0 0 30px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  cursor: pointer;
-  background-image: url(img/promo-arrow.svg);
-  background-repeat: no-repeat;
-  background-position: 86% 50%;
+.form-man .send-phone .form button {
+  line-height: 55px;
+  width: 250px;
 }
 .form-man .send-phone .social {
   margin: 40px 0 0 0;
@@ -2009,9 +1966,8 @@ input {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .form-man .send-phone .form .btn {
+  .form-man .send-phone .form button {
     width: 100%;
-    padding: 15px 0 17px 22px;
     margin: 8px 0 0 0;
   }
   .form-man .send-phone .form input {

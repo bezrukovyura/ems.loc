@@ -23,3 +23,58 @@ input {
     overflow: hidden;
   }
 }
+
+
+
+.anim-arrow {
+  @anim-arrow-background-2: #a21010;
+  @anim-arrow-border: #ccc;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  background-image: url(https://raw.githubusercontent.com/bezrukovyura/ems.loc/master/img/arrow-btn.png);
+  background-repeat: no-repeat;
+  padding: 0 80px 0 0;
+  background-position: calc(100% - 10%) 50%;
+  transition: all 1s;
+  color: white;
+  transform-style: preserve-3d;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 21px;
+  font-size: 20px;
+  text-transform: uppercase;
+  &:hover {
+    background-position: calc(10%) 50%;
+    padding: 0 0px 0 90px;
+    background-color: @anim-arrow-background-2 !important;
+  }
+  &.anim-black {
+    background-color: #000;
+  }
+  &.anim-green {
+    background-color: #76B82A;
+  }
+  &.anim-border {
+    &:before {
+      transition: all 0.5s;
+      content: "";
+      display: block;
+      position: absolute;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      top: 15px;
+      left: 15px;
+      transform: translateZ(-1px);
+      border: 1px solid @anim-arrow-border;
+    }
+    &:hover {
+      &:before {
+        top: 0px;
+        left: 0px;
+        background-color: @anim-arrow-background-2;
+      }
+    }
+  }
+
+}

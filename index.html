@@ -30,7 +30,7 @@
             <div class="title">Получи бесплатную тренировку </div>
             <div class="form">
               <input type="text" placeholder="Ваш телефон"/>
-              <div class="btn">ОТПРАВИТЬ</div>
+              <button class="anim-arrow anim-black anim-border">Отправить</button>
             </div>
             <div class="description">
               <div>EMS-тренировка с персональным тренером</div>
@@ -50,7 +50,7 @@
         <div class="text">ЕМS-тренировки — самый современный вид тренировок полностью заменяющий долгие тренировки</div>
         <div class="baner">Получи бесплатную тренировку.</div>
         <input placeholder="Ваш телефон"/>
-        <div class="btn">Отправить </div>
+        <button class="anim-arrow anim-black anim-border">Отправить  </button>
         <div class="items">
           <div class="item">EMS-тренировка с персональным тренером</div>
           <div class="item">Диагностика и подбор подходящей программы</div>
@@ -133,7 +133,7 @@
           <div class="send-phone">
             <div class="form">
               <input placeholder="Ваш телефон"/>
-              <div class="btn">Отправить </div>
+              <button class="anim-arrow anim-green anim-border">Отправить        </button>
             </div>
             <div class="social">
               <div class="text">Или пишите нам сразу в мессенджеры:</div>
@@ -176,7 +176,8 @@
             <div class="text">
               <div class="title">Лимфодренажный массаж</div>
               <div class="description">
-                 Здесь от вас требуется лишь лежать и получать удовольствие от приятных покалываний.</div><a href="#b">Попробовать бесплатно</a>
+                 Здесь от вас требуется лишь лежать и получать удовольствие от приятных покалываний.</div>
+              <button class="anim-arrow anim-black anim-border" onClick="app.down()">Попробовать бесплатно</button>
             </div><img src="img/how-ph3.jpg"/>
           </div>
         </div>
@@ -213,28 +214,29 @@
         <div class="wrap">
           <div class="left">
             <div class="title">Наша команда</div>
-            <div class="description">Про команду Сколько тренеров. Мастеров спорта и прочее</div><a href="#s">записаться</a>
+            <div class="description">Про команду Сколько тренеров. Мастеров спорта и прочее</div>
+            <button class="anim-arrow anim-black anim-border" onClick="app.down()">записаться              </button>
           </div>
           <div class="right">
             <div class="inner">
               <div class="cards">
                 <div class="card">
-                  <div class="img"><img src="img/we-teams.jpg"/></div>
+                  <div class="img"><img src="img/we-teams-1.jpg"/></div>
                   <div class="title">Василий Дейнека</div>
                   <div class="description">Описание опыта тренера</div>
                 </div>
                 <div class="card">
-                  <div class="img"><img src="img/we-teams.jpg"/></div>
-                  <div class="title">Василий Дейнека</div>
+                  <div class="img"><img src="img/we-teams-2.jpg"/></div>
+                  <div class="title">Александр Потемкин</div>
                   <div class="description">Описание опыта тренера</div>
                 </div>
                 <div class="card">
-                  <div class="img"><img src="img/we-teams.jpg"/></div>
-                  <div class="title">Василий Дейнека</div>
+                  <div class="img"><img src="img/we-teams-3.jpg"/></div>
+                  <div class="title">Дмитрий Дейнека</div>
                   <div class="description">Описание опыта тренера</div>
                 </div>
                 <div class="card">
-                  <div class="img"><img src="img/we-teams.jpg"/></div>
+                  <div class="img"><img src="img/we-teams-4.jpg"/></div>
                   <div class="title">Василий Дейнека</div>
                   <div class="description">Описание опыта тренера</div>
                 </div>
@@ -274,10 +276,10 @@
           <div class="card">
             <div class="top">
               <div class="left">
-                <div class="img"><img src="img/what-talk1.jpg"/></div>
+                <div class="img"><img src="img/what-talk2.jpg"/></div>
               </div>
               <div class="right">
-                <div class="title">Анастасия Русецкая</div>
+                <div class="title">Михаил Иванов</div>
                 <div class="description">23 июня 2018</div>
               </div>
             </div>
@@ -288,10 +290,10 @@
           <div class="card">
             <div class="top">
               <div class="left">
-                <div class="img"><img src="img/what-talk1.jpg"/></div>
+                <div class="img"><img src="img/what-talk3.jpg"/></div>
               </div>
               <div class="right">
-                <div class="title">Анастасия Русецкая</div>
+                <div class="title">Maria Mamontova</div>
                 <div class="description">23 июня 2018</div>
               </div>
             </div>
@@ -302,10 +304,10 @@
           <div class="card">
             <div class="top">
               <div class="left">
-                <div class="img"><img src="img/what-talk1.jpg"/></div>
+                <div class="img"><img src="img/what-talk4.jpg"/></div>
               </div>
               <div class="right">
-                <div class="title">Анастасия Русецкая</div>
+                <div class="title">Михаил Иванова</div>
                 <div class="description">23 июня 2018</div>
               </div>
             </div>
@@ -368,7 +370,7 @@
           <script src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abe1192342e3aca26a4b6c5e8eea2fb65e1b966420e25ec2fc7c6107661d5ada8&amp;amp;width=100%25&amp;amp;height=100%&amp;amp;lang=ru_RU&amp;amp;scroll=true"></script>
         </div>
       </div>
-      <div class="form-man">
+      <div class="form-man" id="form-man">
         <div class="man"></div>
         <div class="inform">
           <div class="title"> 
@@ -379,7 +381,7 @@
           <div class="send-phone">
             <div class="form">
               <input placeholder="Ваш телефон"/>
-              <div class="btn">Отправить </div>
+              <button class="anim-arrow anim-green anim-border">Отправить </button>
             </div>
             <div class="social">
               <div class="text">Или пишите нам сразу в мессенджеры:</div>
