@@ -30,19 +30,21 @@
   }
   .outer {
     overflow: hidden;
+    margin: 50px 0 0 0;
+    
+    position: relative;
     .photos {
-      margin: 50px 0 0 0;
       max-width: 100%;
-      overflow: hidden;
-      position: relative;
+      position: absolute;
       height: 540px;
       transition: all 1s;
+      left: -565px;
       .inner {
         transition: all 1s;
-        position: absolute;
+        position: relative;
         width: 3700px;
         height: 540px;
-        left: -565px;
+        
         >img {
           max-height: 100%;
           margin: 0 10px;
@@ -109,6 +111,7 @@
       height: initial !important;
       .photos {
         height: initial;
+        position: relative !important;
         .inner {
           position: relative;
           left: 0;

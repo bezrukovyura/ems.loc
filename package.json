@@ -10,18 +10,21 @@
   "author": "vk.com/bezrukovyra",
   "license": "MIT",
   "dependencies": {
-    "jquery": "3.3.1",
     "@types/jquery": "3.3.29",
-    "reset-css": "latest",
-    "pug": "latest",
-    "gulp-pug": "latest",
-    "static-server": "^2.2.1",
-    "gulp": "latest",
+    "@types/node": "latest",
     "del": "3.0.0",
-    "typescript": "latest",
-    "gulp-typescript": "latest",
+    "gulp": "latest",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "latest",
+    "gulp-cssmin": "^0.2.0",
     "gulp-less": "latest",
+    "gulp-pug": "latest",
+    "gulp-typescript": "latest",
+    "jquery": "3.3.1",
     "less-plugin-autoprefix": "latest",
-    "gulp-concat": "latest"
+    "pug": "latest",
+    "reset-css": "latest",
+    "static-server": "^2.2.1",
+    "typescript": "latest"
   }
 }

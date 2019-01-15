@@ -25,6 +25,29 @@ input {
 }
 
 
+.popup {
+  display: none;
+  &.active {
+    display: block;
+  }
+  position: fixed;
+  bottom: calc(50% - 130px);
+  right: calc(50% - 187px);
+  padding: 43px;
+  width: 315px;
+  height: 141px;
+  background: #bdbdbd;
+   > div {
+  background: #76b82a;
+  margin: 9px 0;
+  line-height: 54px;
+  text-align: center;
+  font-size: 22px;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+}
+}
 
 .anim-arrow {
   @anim-arrow-background-2: #a21010;

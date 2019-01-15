@@ -1,5 +1,7 @@
 /// <reference path="../node_modules/@types/jquery/index.d.ts" />
 
+//var mylib = require("../node_modules/jquery/dist/jquery.min.js");
+
 enum Vector {
   left,
   right
@@ -52,8 +54,7 @@ class Corusel {
     this.setParams();
     this.textNumber = $($(textNumber)[0]);
     this.textNumber.html(this.currenCount + 1 + "/" + this.countCard);
-    //debugger
-    let leftPhase = $(this.conteiner.children()[0]).css("left");
+    let leftPhase = this.conteiner.css("left");
     if (leftPhase.indexOf("px") != -1) {
       this.position = +leftPhase.replace("px", "");
       if (this.position < 0)
@@ -132,7 +133,6 @@ class SpoilerDots {
 
   addBind() {
     $(this.className + " font").on("click", e => {
-      debugger
       let parent = $($(e.currentTarget).parent());
       parent.html(parent.data("text"));
     });
@@ -152,7 +152,6 @@ class Tabs {
 
   bind() {
     $(this.selectorId + "> *").on("click", e => {
-      debugger
       $(this.selectorId + "> *").removeClass("active");
       $(e.target).addClass("active");
       let photo: { name: string, url: string[] };
@@ -173,6 +172,66 @@ class Tabs {
 
 }
 
+class Ajax {
+
+  constructor() {
+    this.init();
+  }
+
+
+
+  init() {
+    $(".form button").on("click", () => {
+      let phone: string = "";
+      for (let i = 0; i < $(".form input").length; i++) {
+        let val: string = $($(".form input")[i]).val() + "";
+        phone = val.length > phone.length ? val : phone;
+      }
+
+      if(!phone || !phone.length || phone.length < 6){
+        alert("Введите корректный номер");
+        return;
+      }
+      $(".popup").addClass("active");
+
+      $(".popup .kudr").on("click", () => {
+        $(".popup").removeClass("active");
+        $.post(
+          "/mail.php",
+          {
+            phone: phone,
+            loc: "  "
+          },
+          function () {
+            alert("Спасибо за обращение! Мы позвоним Вам на " + phone);
+          }
+        );
+
+      });
+
+      $(".popup .shuv").on("click", () => {
+        $(".popup").removeClass("active");
+        $.post(
+          "/mail.php",
+          {
+            phone: phone,
+            loc: "shuvalovskii"
+          },
+          function () {
+            alert("Спасибо за обращение! Мы позвоним Вам на " + phone);
+          }
+        );
+      });
+
+
+
+
+    });
+  }
+
+
+}
+
 class App {
   constructor() {
     this.init();
@@ -180,26 +239,32 @@ class App {
 
   private init() {
 
+    let spoilerDots = new SpoilerDots(".what-talk .cards .card .bottom .text", 360);
+    debugger
+    let spoilerTeams = new SpoilerDots(".we-teams .wrap .right .card .description", 300);
+
+    
     let accordion = new Accordion();
 
     let team = new Corusel(
-      ".we-teams .bottom .arrows .left",
       ".we-teams .bottom .arrows .right",
+      ".we-teams .bottom .arrows .left",
       ".we-teams .wrap .right .inner",
       ".we-teams .bottom .arrows .text",
       false
     );
 
     let roms = new Corusel(
-      ".rooms .arrows .left",
       ".rooms .arrows .right",
+      ".rooms .arrows .left",
       ".rooms .photos",
       ".rooms .arrows .text",
       true
     );
 
-    let spoilerDots = new SpoilerDots(".what-talk .cards .card .bottom .text", 360);
 
+
+    
     let photosRooms: { name: string, url: string[] }[] = [
       {
         name: "kudrovo",
@@ -212,12 +277,13 @@ class App {
     ];
 
     let onSelectTab = () => {
-      debugger
       roms.setHeight();
       roms.setParams();
     }
 
-    let tabs = new Tabs(".rooms .room-name", ".rooms .outer .photos .inner", photosRooms, onSelectTab)
+    let tabs = new Tabs(".rooms .room-name", ".rooms .outer .photos .inner", photosRooms, onSelectTab);
+
+    let ajax = new Ajax();
   }
 
   down = () => {
@@ -225,4 +291,6 @@ class App {
   }
 }
 
-let app = new App();
+setTimeout(() => {
+  let app = new App();
+}, 3000);
