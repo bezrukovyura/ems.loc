@@ -188,7 +188,7 @@ class Ajax {
         phone = val.length > phone.length ? val : phone;
       }
 
-      if(!phone || !phone.length || phone.length < 6){
+      if (!phone || !phone.length || phone.length < 6) {
         alert("Введите корректный номер");
         return;
       }
@@ -243,7 +243,7 @@ class App {
     debugger
     let spoilerTeams = new SpoilerDots(".we-teams .wrap .right .card .description", 300);
 
-    
+
     let accordion = new Accordion();
 
     let team = new Corusel(
@@ -264,7 +264,7 @@ class App {
 
 
 
-    
+
     let photosRooms: { name: string, url: string[] }[] = [
       {
         name: "kudrovo",
@@ -293,4 +293,7 @@ class App {
 
 setTimeout(() => {
   let app = new App();
+
+
 }, 3000);
+
