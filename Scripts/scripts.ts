@@ -180,11 +180,12 @@ class Ajax {
 
 
 
-  init() {
-    $(".form button").on("click", () => {
+  init() { 
+    $("button").on("click", () => { 
+      debugger
       let phone: string = "";
-      for (let i = 0; i < $(".form input").length; i++) {
-        let val: string = $($(".form input")[i]).val() + "";
+      for (let i = 0; i < $("input.phone-input").length; i++) {
+        let val: string = $($("input.phone-input")[i]).val() + "";
         phone = val.length > phone.length ? val : phone;
       }
 
