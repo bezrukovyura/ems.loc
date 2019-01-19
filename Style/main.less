@@ -73,12 +73,7 @@ input {
     padding: 0 0px 0 90px;
     background-color: @anim-arrow-background-2 !important;
   }
-  &.anim-black {
-    background-color: #000;
-  }
-  &.anim-green {
-    background-color: #76B82A;
-  }
+
   &.anim-border {
     &:before {
       transition: all 0.5s;
@@ -90,14 +85,41 @@ input {
       top: 15px;
       left: 15px;
       transform: translateZ(-1px);
-      border: 1px solid @anim-arrow-border;
+      border: 1px solid #bdbdbd;
     }
     &:hover {
       &:before {
         top: 0px;
         left: 0px;
-        background-color: @anim-arrow-background-2;
+        background-color: #bdbdbd;
       }
+    }
+  }
+  &.anim-black {
+    background-color: #000;
+    &:before {
+      border: 1px solid fade(#000, 50%);
+    }
+    &:hover {
+      &:before {
+        border: #76B82A;
+        background-color: #76B82A;
+      }
+      background-color: #76B82A !important;
+    }
+  }
+  &.anim-green {
+    background-color: #76B82A;
+    &:before {
+      border: 1px solid fade(#76B82A, 50%);
+    }
+    &:hover {
+      &:before {
+        border: 1px solid #1E96C8;
+        background-color: #1E96C8;
+      }
+
+      background-color: #1E96C8 !important;
     }
   }
 

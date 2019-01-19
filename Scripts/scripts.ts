@@ -47,7 +47,7 @@ class Corusel {
   arrows: Arrows;
   conteiner: JQuery;
   textNumber: JQuery;
-  constructor(arrowL: string, arrowR: string, conteiner: string, textNumber: string, private isCentred: boolean) {
+  constructor(arrowL: string, arrowR: string, conteiner: string, textNumber: string) {
     this.conteiner = $($(conteiner)[0]);
     this.setHeight();
     this.arrows = new Arrows(arrowL, arrowR, this.onLeft, this.onRight);
@@ -97,7 +97,7 @@ class Corusel {
 
     let el = this.conteiner.children().children();
     this.countCard = el.length;
-    this.widthBlock = $(el[0]).outerWidth();
+    this.widthBlock = $(el[0]).outerWidth() == 0 ? this.widthBlock : $(el[0]).outerWidth();
     let cards = this.conteiner.children();
     $(cards[0]).css("width", (this.countCard + 1) * this.widthBlock + "px");
   }
@@ -144,10 +144,12 @@ class Tabs {
   selectors: JQuery[] = [];
 
   constructor(private selectorId: string, private photoWrapId: string, private photos: { name: string, url: string[] }[], private callBack: () => void) {
+
     let wrap = $($(this.selectorId)[0]);
     for (let i = 0; i < wrap.length; i++) {
       this.selectors.push($(wrap[i]));
     }
+    this.bind();
   }
 
   bind() {
@@ -181,7 +183,7 @@ class Ajax {
 
 
   init() { 
-    $("button").on("click", () => { 
+    $("button.send-phone-action").on("click", () => { 
       debugger
       let phone: string = "";
       for (let i = 0; i < $("input.phone-input").length; i++) {
@@ -241,27 +243,30 @@ class App {
   private init() {
 
     let spoilerDots = new SpoilerDots(".what-talk .cards .card .bottom .text", 360);
-    debugger
-    let spoilerTeams = new SpoilerDots(".we-teams .wrap .right .card .description", 300);
 
+    let spoilerTeams = new SpoilerDots(".we-teams .wrap .right .card .description", 275);
 
     let accordion = new Accordion();
 
-    let team = new Corusel(
-      ".we-teams .bottom .arrows .right",
-      ".we-teams .bottom .arrows .left",
-      ".we-teams .wrap .right .inner",
-      ".we-teams .bottom .arrows .text",
-      false
-    );
+    var team: Corusel;
+    var roms: Corusel;
+    
+    setTimeout(()=>{
+      team = new Corusel(
+        ".we-teams .bottom .arrows .right",
+        ".we-teams .bottom .arrows .left",
+        ".we-teams .wrap .right .inner",
+        ".we-teams .bottom .arrows .text"
+      );
+  
+      roms = new Corusel(
+        ".rooms .arrows .right",
+        ".rooms .arrows .left",
+        ".rooms .photos",
+        ".rooms .arrows .text"
+      );
+    },3000);
 
-    let roms = new Corusel(
-      ".rooms .arrows .right",
-      ".rooms .arrows .left",
-      ".rooms .photos",
-      ".rooms .arrows .text",
-      true
-    );
 
 
 
@@ -273,7 +278,7 @@ class App {
       },
       {
         name: "shuval",
-        url: ["img/rooms-room0-photo0.jpg", "img/rooms-room0-photo1.jpg", "img/rooms-room0-photo2.jpg"]
+        url: ["img/rooms-room1-photo0.jpg", "img/rooms-room1-photo1.jpg", "img/rooms-room1-photo2.jpg", "img/rooms-room1-photo3.jpg"]
       }
     ];
 
@@ -292,9 +297,11 @@ class App {
   }
 }
 
-setTimeout(() => {
-  let app = new App();
+debugger
+var app: App;
 
+//setTimeout(() => {
+  app = new App();
+//}, 3000);
 
-}, 3000);
-
+debugger;

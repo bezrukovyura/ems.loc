@@ -40,6 +40,7 @@ gulp.task('less', function () {
 gulp.task('concatJs', function () {
   return gulp.src([
     "./node_modules/jquery/dist/jquery.min.js",
+    "./Scripts/lib/fm.revealator.jquery.min.js",
     "./scripts.js"
   ])
     .pipe(concat('scripts.js'))
